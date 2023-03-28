@@ -67,6 +67,15 @@
         var entries = Object.entries(localStorage)
         localStorage.setItem('item'+entries.length+1, newItem);
 
+        var entryObject = {};
+        entryObject.item = newItem;
+        
+        var entryObjectSerialized = JSON.stringify(entryObject); 
+        console.log(entryObjectSerialized);
+
+        localStorage.setItem('myObject',entryObjectSerialized);
+
+
     }
 
     itemList.addEventListener('click',removeItem);
